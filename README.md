@@ -1,17 +1,15 @@
 # apptoon
 
-A new Flutter project.
+Flutter app with api
+    
+5/5/2023
 
-## Getting Started
+    * 기초 매인화면 생성
+        - 타이틀: 오늘의 웹툰
+    * 기초 메인화면 : home_screen.dart
 
-This project is a starting point for a Flutter application.
+5/6/2023
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Webtoon_App
+    * 페이지 연결을 위해 "http" package 설치
+        - windows/pubspec.yaml에서 추가/확인 가능
+    * API 연결 : api_service.dart
