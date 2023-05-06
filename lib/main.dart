@@ -3,7 +3,6 @@ import 'package:apptoon/services/api_service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  ApiService().getTodaysToons();
   runApp(const MyApp());
 }
 
