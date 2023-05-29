@@ -24,15 +24,17 @@ class HomeScreen extends StatelessWidget {
       body: FutureBuilder(
         future: webtoons,
         builder: (context,future){
+
           if(future.hasData){
-            return ListView.builder(
+            return ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: future.data!.length,
               itemBuilder: (context, index){
-                print(index);
+                // print(index);
                 var webtoon = future.data![index];
                 return Text(webtoon.title);
               },
+              separatorBuilder: (context, index)=> SizedBox(width: 20,),
             );
           }
             return Center(
