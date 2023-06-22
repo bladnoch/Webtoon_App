@@ -46,16 +46,33 @@ class HomeScreen extends StatelessWidget {
     return ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: future.data!.length,
+            padding: EdgeInsets.symmetric( vertical: 10 , horizontal: 20),
             itemBuilder: (context, index){
               // print(index);
               var webtoon = future.data![index];
               return Column(
                 children: [
-                  SizedBox(
+                  Container(
                     width: 250,
+                    clipBehavior: Clip.hardEdge,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 15,
+                          offset: Offset(10,10),
+                          color: Colors.black.withOpacity(0.5),
+                        ),
+                      ]
+                    ),
                     child: Image.network(webtoon.thumb),
                   ),
-                  Text(webtoon.title),
+
+                  SizedBox(height: 10,),
+                  Text(webtoon.title,
+                    style: TextStyle(fontSize: 22,
+                    ),
+                  ),
                 ],
               );
             },
