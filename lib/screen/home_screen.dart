@@ -2,6 +2,7 @@ import 'package:apptoon/models/webtoon_model.dart';
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
@@ -26,7 +27,12 @@ class HomeScreen extends StatelessWidget {
         builder: (context,snapshot){
 
           if(snapshot.hasData){
-            return makeList(snapshot);
+            return Column(
+              children: [
+                SizedBox(height: 50,),
+                Expanded(child: makeList(snapshot))
+              ],
+            );
           }
             return Center(
               child: CircularProgressIndicator(),
@@ -43,9 +49,17 @@ class HomeScreen extends StatelessWidget {
             itemBuilder: (context, index){
               // print(index);
               var webtoon = future.data![index];
-              return Text(webtoon.title);
+              return Column(
+                children: [
+                  SizedBox(
+                    width: 250,
+                    child: Image.network(webtoon.thumb),
+                  ),
+                  Text(webtoon.title),
+                ],
+              );
             },
-            separatorBuilder: (context, index)=> SizedBox(width: 20,),
+            separatorBuilder: (context, index)=> SizedBox(width: 40,),
           );
   }
 }

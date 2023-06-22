@@ -1,14 +1,25 @@
+import 'dart:io';
+
 import 'package:apptoon/screen/home_screen.dart';
 import 'package:apptoon/services/api_service.dart';
 import 'package:flutter/material.dart';
 
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36';
+  }
+}
 void main() {
-  runApp(const MyApp());
+  HttpOverrides.global = MyHttpOverrides();
+
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
