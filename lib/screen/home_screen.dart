@@ -23,10 +23,10 @@ class HomeScreen extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: webtoons,
-        builder: (context,future){
+        builder: (context,snapshot){
 
-          if(future.hasData){
-            return makeList(future);
+          if(snapshot.hasData){
+            return makeList(snapshot);
           }
             return Center(
               child: CircularProgressIndicator(),
