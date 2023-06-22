@@ -2,6 +2,11 @@ import 'package:apptoon/models/webtoon_model.dart';
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
+/// @home_screen.dart: all materials of home screen
+/// @author dounguk Kim
+/// @since (last update: 6/22/2023)
+/// @version v0.0.1
+
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -42,6 +47,10 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  /**
+   * makeList() mathod
+   * this brings webtoon image with multiple image options.
+   */
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> future) {
     return ListView.separated(
             scrollDirection: Axis.horizontal,
