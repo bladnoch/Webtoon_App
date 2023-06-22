@@ -26,16 +26,7 @@ class HomeScreen extends StatelessWidget {
         builder: (context,future){
 
           if(future.hasData){
-            return ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: future.data!.length,
-              itemBuilder: (context, index){
-                // print(index);
-                var webtoon = future.data![index];
-                return Text(webtoon.title);
-              },
-              separatorBuilder: (context, index)=> SizedBox(width: 20,),
-            );
+            return makeList(future);
           }
             return Center(
               child: CircularProgressIndicator(),
@@ -43,5 +34,18 @@ class HomeScreen extends StatelessWidget {
         },
       ),
     );
+  }
+
+  ListView makeList(AsyncSnapshot<List<WebtoonModel>> future) {
+    return ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: future.data!.length,
+            itemBuilder: (context, index){
+              // print(index);
+              var webtoon = future.data![index];
+              return Text(webtoon.title);
+            },
+            separatorBuilder: (context, index)=> SizedBox(width: 20,),
+          );
   }
 }
