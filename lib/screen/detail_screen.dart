@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// @category detail_screen.dart: displays image when user clicks the webtoon image
+/// @author dounguk Kim
+/// @since 6/24/2023
+/// @version v0.0.1
+
+
 class DetailScreen extends StatelessWidget {
   final String title, thumb, id;
   const DetailScreen({

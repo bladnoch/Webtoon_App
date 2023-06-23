@@ -5,7 +5,7 @@ import '../services/api_service.dart';
 
 /// @home_screen.dart: all materials of home screen
 /// @author dounguk Kim
-/// @since 5/5/2023)
+/// @since 5/5/2023
 /// @version v0.0.1
 
 

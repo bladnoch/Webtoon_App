@@ -1,5 +1,12 @@
 import 'package:apptoon/screen/detail_screen.dart';
 import 'package:flutter/material.dart';
+
+/// @Webtoon: seperated from home_screen. displays image of webtoon image
+/// @author dounguk Kim
+/// @since 6/24/2023
+/// @version v0.0.1
+
+
 class Webtoon extends StatelessWidget {
 
   final String title, thumb, id;
