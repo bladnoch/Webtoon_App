@@ -1,3 +1,4 @@
+import 'package:apptoon/screen/detail_screen.dart';
 import 'package:flutter/material.dart';
 class Webtoon extends StatelessWidget {
 
@@ -14,7 +15,11 @@ class Webtoon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-
+        Navigator.push(context,
+            MaterialPageRoute(
+              builder: (context)=>DetailScreen(title: title, thumb: thumb, id: id,),
+            ),
+        );
       },
       child: Column(
           children: [
