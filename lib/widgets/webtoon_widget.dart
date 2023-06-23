@@ -12,30 +12,35 @@ class Webtoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        children: [
-          Container(
-            width: 250,
-            clipBehavior: Clip.hardEdge,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 15,
-                    offset: Offset(10,10),
-                    color: Colors.black.withOpacity(0.5),
-                  ),
-                ]
-            ),
-            child: Image.network(thumb),
-          ),
+    return GestureDetector(
+      onTap: (){
 
-          SizedBox(height: 10,),
-          Text(title,
-            style: TextStyle(fontSize: 22,
+      },
+      child: Column(
+          children: [
+            Container(
+              width: 250,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 15,
+                      offset: Offset(10,10),
+                      color: Colors.black.withOpacity(0.5),
+                    ),
+                  ]
+              ),
+              child: Image.network(thumb),
             ),
-          ),
-        ],
-      );
+
+            SizedBox(height: 10,),
+            Text(title,
+              style: TextStyle(fontSize: 22,
+              ),
+            ),
+          ],
+        ),
+    );
   }
 }
