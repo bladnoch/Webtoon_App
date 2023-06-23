@@ -1,11 +1,11 @@
 import 'package:apptoon/models/webtoon_model.dart';
+import 'package:apptoon/widgets/webtoon_widget.dart';
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
-import '../widgets/webtoon_widget.dart';
 
 /// @home_screen.dart: all materials of home screen
 /// @author dounguk Kim
-/// @since 5/5/2023
+/// @since 5/5/2023)
 /// @version v0.0.1
 
 
@@ -61,9 +61,9 @@ class HomeScreen extends StatelessWidget {
               // print(index);
               var webtoon = future.data![index];
               return Webtoon(
-                  title: webtoon.title,
-                  thumb: webtoon.thumb,
-                  id: webtoon.id
+                title: webtoon.title,
+                thumb: webtoon.thumb,
+                id: webtoon.id,
               );
             },
             separatorBuilder: (context, index)=> SizedBox(width: 40,),
