@@ -1,5 +1,7 @@
 import 'package:apptoon/services/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../models/webtoon_detail_model.dart';
 import '../models/webtoon_episode_model.dart';
@@ -38,6 +40,9 @@ class _DetailScreenState extends State<DetailScreen> {
     webtoon=ApiService.getToonById(widget.id);
     episodes=ApiService.getLatestEpisodesById(widget.id);
   }
+
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -127,39 +132,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     return Column(
                       children: [
                         for(var episode in snapshot.data!)
-                          Container(
-                            margin: EdgeInsets.only(bottom: 10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.green.shade400,
-
-
-                              //
-                              boxShadow: [
-                              BoxShadow(
-                              blurRadius: 15,
-                              offset: Offset(10,10),
-                              color: Colors.black.withOpacity(0.5),
-                            ),],
-
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                Text(episode.title,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                                ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: Colors.white,),
-                              ],),
-                            ),
-                          ),
+                          Episode(episode: episode),
                       ],
                     );
                   }
@@ -169,6 +142,60 @@ class _DetailScreenState extends State<DetailScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Episode extends StatelessWidget {
+  const Episode({
+    super.key,
+    required this.episode,
+  });
+
+  /// in lesson
+  /// const Episode({
+  /// key? key,
+  /// required this.episode,
+  /// }) : super(key: key);
+
+  final WebtoonEpisodeModel episode;
+
+  onButtonTap() async {
+    await launchUrlString("https://google.com");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.green.shade400,
+        //
+        boxShadow: [
+        BoxShadow(
+        blurRadius: 15,
+        offset: Offset(10,10),
+        color: Colors.black.withOpacity(0.5),
+      ),],
+
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+          Text(episode.title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+          ),
+          ),
+          Icon(
+            Icons.chevron_right_rounded,
+            color: Colors.white,),
+        ],),
       ),
     );
   }
