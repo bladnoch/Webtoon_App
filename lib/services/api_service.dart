@@ -25,6 +25,8 @@ class ApiService{
     throw Error();
   }
 
+  /// get deail of latest episode
+  /// return: webtoon: title, about, genre, age
   static Future<WebtoonDetailModel> getToonById(String id) async{
     final url=Uri.parse("$baseUrl/$id");
     final responce = await http.get(url);
@@ -35,6 +37,8 @@ class ApiService{
     throw Error();
   }
 
+  /// get more deail info of latest episode by list
+  /// return: list of epidodesInstance: id,title,rating,date
   static Future<List<WebtoonEpisodeModel>> getLatestEpisodesById(String id) async{
     List<WebtoonEpisodeModel> episodesInstances=[];
     final url=Uri.parse("$baseUrl/$id/episodes");
