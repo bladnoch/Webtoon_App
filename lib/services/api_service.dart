@@ -23,4 +23,5 @@ class ApiService{
     throw Error();
   }
 
+  static Future
 }
