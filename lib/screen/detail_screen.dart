@@ -10,6 +10,9 @@ import '../models/webtoon_episode_model.dart';
 /// @version v0.0.1
 
 
+/// this class was originally the statelesswidget but
+/// some variables are needing to use initState()
+/// Therefor this class is modified to statefulwidget
 class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
 
@@ -28,6 +31,8 @@ class _DetailScreenState extends State<DetailScreen> {
 
   late Future<WebtoonDetailModel> webtoon;
   late Future<List<WebtoonEpisodeModel>> episodes;
+
+
   void initState(){
     super.initState();
     webtoon=ApiService.getToonById(widget.id);
