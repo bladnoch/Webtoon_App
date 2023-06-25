@@ -52,6 +52,10 @@ class _DetailScreenState extends State<DetailScreen> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           foregroundColor: Colors.green,
+          actions: [
+            IconButton(onPressed: (){},
+                icon: Icon(Icons.favorite_outline,),),
+          ],
           elevation: 2,
           title: Text(
             widget.title,
