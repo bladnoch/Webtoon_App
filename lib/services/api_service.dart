@@ -32,7 +32,7 @@ class ApiService{
     final responce = await http.get(url);
     if(responce.statusCode==200){
       final webtoon=jsonDecode(responce.body);
-      WebtoonDetailModel.fromJson(webtoon);
+      return WebtoonDetailModel.fromJson(webtoon);
     }
     throw Error();
   }
