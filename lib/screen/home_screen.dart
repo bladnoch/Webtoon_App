@@ -52,18 +52,18 @@ class HomeScreen extends StatelessWidget {
   /// this brings webtoon image with multiple image options.
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> future) {
     return ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: future.data!.length,
-            padding: EdgeInsets.symmetric( vertical: 10 , horizontal: 20),
-            itemBuilder: (context, index){
-              // print(index);
-              var webtoon = future.data![index];
-              return Webtoon(
-                title: webtoon.title,
-                thumb: webtoon.thumb,
-                id: webtoon.id,
-              );
-            },
+      scrollDirection: Axis.horizontal,
+      itemCount: future.data!.length,
+      padding: EdgeInsets.symmetric( vertical: 10 , horizontal: 20),
+      itemBuilder: (context, index){
+        // print(index);
+        var webtoon = future.data![index];
+        return Webtoon(
+          title: webtoon.title,
+          thumb: webtoon.thumb,
+          id: webtoon.id,
+        );
+      },
             separatorBuilder: (context, index)=> SizedBox(width: 40,),
           );
   }
