@@ -4,7 +4,10 @@ import 'package:http/http.dart' as http;
 import '../models/webtoon_episode_model.dart';
 import '../models/webtoon_model.dart';
 
-
+/// @category: api_service.dart: api part
+/// @author dounguk Kim
+/// @since 5/6/2023
+/// @version v0.0.1
 
 class ApiService{
   static const String baseUrl="https://webtoon-crawler.nomadcoders.workers.dev";

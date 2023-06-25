@@ -1,6 +1,5 @@
 import 'package:apptoon/services/api_service.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/webtoon_detail_model.dart';
 import '../models/webtoon_episode_model.dart';
@@ -15,6 +14,7 @@ import '../widgets/episode_widget.dart';
 /// this class was originally the statelesswidget but
 /// some variables are needing to use initState()
 /// Therefor this class is modified to statefulwidget
+
 class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
 

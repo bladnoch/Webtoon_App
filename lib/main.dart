@@ -3,6 +3,10 @@ import 'dart:io';
 import 'package:apptoon/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
+/// @category: main.dart:
+/// @author dounguk Kim
+/// @since 5/5/2023
+/// @version v0.0.1
 
 class MyHttpOverrides extends HttpOverrides {
   @override
