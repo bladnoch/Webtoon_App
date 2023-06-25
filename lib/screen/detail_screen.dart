@@ -17,6 +17,8 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    //load appbar to show display title on appbar when touch the image.
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -38,6 +40,10 @@ class DetailScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
+              /// tag: id
+              /// connect containers
+              /// connected with webtoon_widget.dart
               Hero(
                 tag: id,
                 child: Container(

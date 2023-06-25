@@ -19,13 +19,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.green,
-        elevation: 2,
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.green,
+          elevation: 2,
         title: Text("오늘의 웹툰",
-        style: TextStyle(fontSize: 24,
-        fontWeight: FontWeight.w400,
-        ),
+          style: TextStyle(fontSize: 24,
+          fontWeight: FontWeight.w400,
+          ),
         ),
       ),
       body: FutureBuilder(
@@ -48,10 +48,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  /**
-   * makeList() mathod
-   * this brings webtoon image with multiple image options.
-   */
+  /// makeList() mathod
+  /// this brings webtoon image with multiple image options.
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> future) {
     return ListView.separated(
             scrollDirection: Axis.horizontal,

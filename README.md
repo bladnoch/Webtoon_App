@@ -14,4 +14,7 @@ Flutter app with api
         - windows/pubspec.yaml에서 추가/확인 가능
     * API 연결 : api_service.dart
     * API에 있는 title, thumb, id정보를 나눠서 저장 : webtoon_model.dart
-        - List를 나눠서 저장 후 
+        
+6/25/2023
+    
+    * Hero를 이용해 이미지 선택 애니메이션 추가 
