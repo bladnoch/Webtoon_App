@@ -1,4 +1,8 @@
+import 'package:apptoon/services/api_service.dart';
 import 'package:flutter/material.dart';
+
+import '../models/webtoon_detail_model.dart';
+import '../models/webtoon_episode_model.dart';
 
 /// @category detail_screen.dart: displays image when user clicks the webtoon image
 /// @author dounguk Kim
@@ -6,8 +10,9 @@ import 'package:flutter/material.dart';
 /// @version v0.0.1
 
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
+
   const DetailScreen({
     super.key,
     required this.title,
@@ -15,6 +20,19 @@ class DetailScreen extends StatelessWidget {
     required this.id,
   });
 
+  @override
+  State<DetailScreen> createState() => _DetailScreenState();
+}
+
+class _DetailScreenState extends State<DetailScreen> {
+
+  late Future<WebtoonDetailModel> webtoon;
+  late Future<List<WebtoonEpisodeModel>> episodes;
+  void initState(){
+    super.initState();
+    webtoon=ApiService.getToonById(widget.id);
+    episodes=ApiService.getLatestEpisodesById(widget.id);
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -26,7 +44,7 @@ class DetailScreen extends StatelessWidget {
           foregroundColor: Colors.green,
           elevation: 2,
           title: Text(
-            title,
+            widget.title,
             style: TextStyle(fontSize: 24,
             fontWeight: FontWeight.w400,
             ),
@@ -45,7 +63,7 @@ class DetailScreen extends StatelessWidget {
               /// connect containers
               /// connected with webtoon_widget.dart
               Hero(
-                tag: id,
+                tag: widget.id,
                 child: Container(
                   width: 250,
                   clipBehavior: Clip.hardEdge,
@@ -59,7 +77,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                       ]
                   ),
-                  child: Image.network(thumb),
+                  child: Image.network(widget.thumb),
                 ),
               ),
             ],
