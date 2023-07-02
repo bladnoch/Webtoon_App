@@ -1,6 +1,9 @@
 # apptoon
 
 Flutter app with api
+
+<img width="1660" alt="스크린샷 2023-06-26 오전 1 43 22" src="https://github.com/bladnoch/Webtoon_App/assets/112937442/5fe14b7a-7d7a-4890-8126-f2c4d3971adc">
+
     
 5/5/2023
 
